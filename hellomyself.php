@@ -1,3 +1,6 @@
 <?php 
 
-echo "Hello Romain\n";
+$firstname='romain';
+echo "hello $firstname\n";
+
+
