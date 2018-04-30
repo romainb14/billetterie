@@ -1,4 +1,5 @@
 GITHUB_EMAIL=$1
+GITHUB_USERNAME=$2
 
 echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list
 wget -O- https://www.dotdeb.org/dotdeb.gpg | apt-key add - apt update
@@ -17,3 +18,6 @@ fi
 cp /vagrant/.ssh/config /home/vagrant/.ssh/config
 chown -R vagrant:vagrant /home/vagrant/.ssh/config
 
+git config --global push.default simple
+git config --global user.email "$GITHUB_EMAIL"
+git config --global user.name "$GITHUB_USERNAME"
