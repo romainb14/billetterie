@@ -54,6 +54,8 @@ Vagrant.configure("2") do |config|
 
   if Vagrant::Util::Platform.darwin? then
     config.vm.synced_folder ".", "/vagrant", type: "nfs"
+  else
+    config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   end
 
 
