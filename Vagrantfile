@@ -84,6 +84,7 @@ Vagrant.configure("2") do |config|
   # SHELL
 
   github_email = ''
+  github_username = ''
   if !File.exist?('.ssh/id_rsa.github')
     print "Which email do you want to use with Github ?"
     print "\nEmail: "
