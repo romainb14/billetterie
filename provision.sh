@@ -12,6 +12,7 @@ apt-get install php7.0 -y
 sudo apt-get install git-core -y
 
 if [ ! -f /vagrant/.ssh/id_rsa.github ]; then
+    mkdir /vagrant/.ssh
     ssh-keygen -b 2048 -t rsa -f /vagrant/.ssh/id_rsa.github -q -N "" -C "$GITHUB_EMAIL"
 fi
 
