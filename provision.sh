@@ -16,8 +16,9 @@ if [ ! -f /vagrant/.ssh/id_rsa.github ]; then
     ssh-keygen -b 2048 -t rsa -f /vagrant/.ssh/id_rsa.github -q -N "" -C "$GITHUB_EMAIL"
 fi
 
-cp /vagrant/.ssh/config /home/vagrant/.ssh/config
-chown -R vagrant:vagrant /home/vagrant/.ssh/config
+cp /vagrant/.ssh/* /home/vagrant/.ssh/
+chown -R vagrant:vagrant /home/vagrant/.ssh/*
+chmod 400 /home/vagrant/.ssh/id_rsa.github*
 
 git config --global push.default simple
 git config --global user.email "$GITHUB_EMAIL"
